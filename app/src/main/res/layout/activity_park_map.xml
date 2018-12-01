@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#558ED5"
+    tools:context=".ParkMap">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="74dp"
+        android:layout_height="117dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="267dp"
+        android:src="@drawable/empty" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="74dp"
+        android:layout_height="117dp"
+        android:layout_alignTop="@+id/imageView4"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="168dp"
+        android:src="@drawable/empty" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="74dp"
+        android:layout_height="117dp"
+        android:layout_alignTop="@+id/imageView5"
+        android:layout_marginTop="-145dp"
+        android:layout_marginEnd="-76dp"
+        android:layout_toStartOf="@+id/imageView7"
+        android:src="@drawable/empty" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="74dp"
+        android:layout_height="117dp"
+        android:layout_alignStart="@+id/imageView6"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-102dp"
+        android:layout_marginBottom="102dp"
+        android:src="@drawable/empty" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="74dp"
+        android:layout_height="117dp"
+        android:layout_alignTop="@+id/imageView7"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="6dp"
+        android:src="@drawable/empty" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="74dp"
+        android:layout_height="117dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="284dp"
+        android:layout_marginEnd="63dp"
+        android:src="@drawable/empty" />
+
+
+</RelativeLayout>
