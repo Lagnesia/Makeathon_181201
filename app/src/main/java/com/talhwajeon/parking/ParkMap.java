@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,10 +30,19 @@ public class ParkMap extends AppCompatActivity {
     private String ip = "xxx.xxx.xxx.xxx"; // IP
     private int port = 9999; // PORT번호
 
+    ImageButton button1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_park_map);
+
+        button1 = (ImageButton)findViewById(R.id.imageView2);
+        button1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                button1.setImageResource(R.drawable.full_my);
+            }
+        });
 
      /*   mHandler = new Handler();
 
@@ -45,9 +55,18 @@ public class ParkMap extends AppCompatActivity {
         checkUpdate.start();*/
     }
 
-       /*
+/*        @Override
+        protected void onStop() {
+            super.onStop();
+            try {
+                socket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }*/
 
-       private Thread checkUpdate = new Thread() {
+
+       /* private Thread checkUpdate = new Thread() {
 
             public void run() {
                 try {
