@@ -19,24 +19,26 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapActivity extends FragmentActivity /*implements OnMapReadyCallback*/ {
     GoogleMap map;
 
-    @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
+/*
         LocationManager locationManager =
                 (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
         LocationProvider provider =
                 locationManager.getProvider(LocationManager.GPS_PROVIDER);
+*/
 
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+/*        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);*/
     }
-
+/*
     @Override
     public void onMapReady(GoogleMap googleMap) {
         map = googleMap;
@@ -55,9 +57,9 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
 
 
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(current_loc));
-    }
+    }*/
 
-    private final LocationListener mLocationListener = new LocationListener() {
+/*    private final LocationListener mLocationListener = new LocationListener() {
         @Override
         public void onLocationChanged(Location location) {
             LatLng  latLng = new LatLng(location.getLatitude(), location.getLongitude());
@@ -82,7 +84,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         public void onProviderDisabled(String provider) {
 
         }
-    };
+    };*/
 
    /* public LatLng getLocation() {
         LatLng current_loc;
@@ -119,7 +121,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         return current_loc;
     }*/
 
-    @Override
+/*    @Override
     protected void onStart() {
         super.onStart();
 
@@ -137,5 +139,5 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
     private void enableLocationSettings() {
         Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
         startActivity(intent);
-    }
+    }*/
 }

@@ -45,18 +45,9 @@ public class ParkMap extends AppCompatActivity {
         checkUpdate.start();*/
     }
 
-/*        @Override
-        protected void onStop() {
-            super.onStop();
-            try {
-                socket.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }*/
+       /*
 
-
-       /* private Thread checkUpdate = new Thread() {
+       private Thread checkUpdate = new Thread() {
 
             public void run() {
                 try {

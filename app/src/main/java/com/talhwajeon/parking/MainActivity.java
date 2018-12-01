@@ -14,11 +14,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ImageButton b1 = (ImageButton)findViewById(R.id.mb1);
+        ImageButton b2 = (ImageButton)findViewById(R.id.mb2);
+
         b1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intent = new Intent(
                         MainActivity.this,
                         MyParking.class);
+                startActivity(intent);
+            }
+        });
+
+        b2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(
+                        MainActivity.this,
+                        MapActivity.class);
                 startActivity(intent);
             }
         });
