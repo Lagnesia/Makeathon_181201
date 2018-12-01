@@ -1,4 +1,4 @@
-package com.example.nwerl.myapplication;
+package com.talhwajeon.parking;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

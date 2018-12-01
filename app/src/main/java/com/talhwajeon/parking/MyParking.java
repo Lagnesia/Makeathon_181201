@@ -1,4 +1,4 @@
-package com.example.nwerl.myapplication;
+package com.talhwajeon.parking;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,6 +9,8 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.talhwajeon.parking.R;
 
 public class MyParking extends Activity {
     int allNum = 30;

@@ -2,6 +2,7 @@ package com.talhwajeon.parking;
 
 import android.content.Context;
 import android.content.Intent;
+import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.location.LocationProvider;
@@ -14,6 +15,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -46,7 +48,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
             MarkerOptions markerOpt = new MarkerOptions();
             markerOpt
                     .position(new LatLng(current_loc.latitude+i, current_loc.latitude));
-                    
+
 
             map.addMarker(markerOpt);
         }
@@ -54,6 +56,33 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
 
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(current_loc));
     }
+
+    private final LocationListener mLocationListener = new LocationListener() {
+        @Override
+        public void onLocationChanged(Location location) {
+            LatLng  latLng = new LatLng(location.getLatitude(), location.getLongitude());
+            CameraPosition cameraPosition = new CameraPosition.Builder()
+                    .target(latLng).zoom(14).build();
+
+            map.animateCamera(CameraUpdateFactory
+                    .newCameraPosition(cameraPosition));
+        }
+
+        @Override
+        public void onStatusChanged(String provider, int status, Bundle extras) {
+
+        }
+
+        @Override
+        public void onProviderEnabled(String provider) {
+
+        }
+
+        @Override
+        public void onProviderDisabled(String provider) {
+
+        }
+    };
 
    /* public LatLng getLocation() {
         LatLng current_loc;

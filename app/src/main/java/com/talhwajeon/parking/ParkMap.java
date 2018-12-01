@@ -19,13 +19,12 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 public class ParkMap extends AppCompatActivity {
-    private String html = "";
+    private String msg = "";
     private Handler mHandler;
 
     private Socket socket;
 
     private BufferedReader networkReader;
-    private BufferedWriter networkWriter;
 
     private String ip = "xxx.xxx.xxx.xxx"; // IP
     private int port = 9999; // PORT번호
@@ -35,7 +34,7 @@ public class ParkMap extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_park_map);
 
-        mHandler = new Handler();
+     /*   mHandler = new Handler();
 
         try {
             setSocket(ip, port);
@@ -43,10 +42,10 @@ public class ParkMap extends AppCompatActivity {
             e1.printStackTrace();
         }
 
-        checkUpdate.start();
+        checkUpdate.start();*/
     }
 
-        @Override
+/*        @Override
         protected void onStop() {
             super.onStop();
             try {
@@ -54,19 +53,16 @@ public class ParkMap extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
+        }*/
 
 
-        private Thread checkUpdate = new Thread() {
+       /* private Thread checkUpdate = new Thread() {
 
             public void run() {
                 try {
-                    String line;
-                    Log.w("ChattingStart", "Start Thread");
+                    Log.w("Thread", "Start Thread");
                     while (true) {
-                        Log.w("Chatting is running", "chatting is running");
-                        line = networkReader.readLine();
-                        html = line;
+                        msg = networkReader.readLine();
                         mHandler.post(showUpdate);
                     }
                 } catch (Exception e) {
@@ -78,7 +74,7 @@ public class ParkMap extends AppCompatActivity {
         private Runnable showUpdate = new Runnable() {
 
             public void run() {
-                Toast.makeText(ParkMap.this, "Coming word: " + html, Toast.LENGTH_SHORT).show();
+                Toast.makeText(ParkMap.this, "Coming word: " + msg, Toast.LENGTH_SHORT).show();
             }
 
         };
@@ -87,12 +83,10 @@ public class ParkMap extends AppCompatActivity {
 
             try {
                 socket = new Socket(ip, port);
-                networkWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
                 networkReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             } catch (IOException e) {
                 System.out.println(e);
                 e.printStackTrace();
             }
-
-        }
+        }*/
 }
